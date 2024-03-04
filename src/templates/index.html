@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asper</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Welcome to Asper</h1>
+        <p>Amazing Software Programming for Ergonomic Results</p>
+
+        <nav>
+          <a href="{{ url_for('index') }}">Main Page</a>
+          <a href="{{ url_for('about') }}">About Page</a>
+          <a href="#" id="toggleMenu">Toggle Menu</a>
+        </nav>
+      </div>
+    </header>
+
+    <img
+      class="logo"
+      src="{{ url_for('static', filename='images/Asper.png') }}"
+      alt="Aplication logo"
+    />
+
+ 
+    <div id="menu" class="hidden">
+      <div>
+        <a href="{{ url_for('quit') }}">Quit</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+          document.getElementById("menu").classList.toggle("hidden");
+        }
+      });
+
+      document.getElementById("toggleMenu").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("menu").classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

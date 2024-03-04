@@ -1,0 +1,7 @@
+Background color: #f0f0f0
+Header background color: #02aeec
+Header text color: #fff
+Navigation link background color: #053f74
+Navigation link text color: #fff
+About item background color: #fff
+Anchor text color: #02aeec

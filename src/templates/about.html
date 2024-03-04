@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Asper</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>About Asper</h1>
+      <p>
+        A GUI maker framework integrating website rendering for dynamic content in
+        software. Developers effortlessly blend native and web technologies,
+        creating visually appealing softwares with ergonomic tools
+      </p>
+      <nav>
+        <a href="{{ url_for('index') }}">Main Page</a>
+        <a href="{{ url_for('about') }}">About Page</a>
+        <a href="#" id="toggleMenu">Toggle Menu</a>
+      </nav>
+    </div>
+  </header>
+
+
+    <section>
+      <div>
+        <img src="{{ url_for('static', filename='images/team.png') }}" alt="Team Photo">
+        <h2>Our Team</h2>
+        <p>Meet the talented individuals behind Asper. Our diverse team of professionals is dedicated to delivering high-quality solutions and exceptional service to our clients.</p>
+      </div>
+
+      <div>
+        <img src="{{ url_for('static', filename='images/office.png') }}" alt="Office Photo">
+        <h2>Our Office</h2>
+        <p>Take a peek inside our modern office space. Located in the heart of the city, our office provides a collaborative environment where creativity thrives and ideas flourish.</p>
+      </div>
+
+      <div>
+        <img src="{{ url_for('static', filename='images/mission.png') }}" alt="Mission Photo">
+        <h2>Our Mission</h2>
+        <p>At Asper, our mission is to empower businesses with innovative solutions that drive growth and success. We strive to exceed client expectations and make a positive impact in the communities we serve.</p>
+      </div>
+    </section>
+
+
+  <div id="menu" class="hidden">
+    <div>
+      <a href="{{ url_for('quit') }}">Quit</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.getElementById("menu").classList.toggle("hidden");
+      }
+    });
+
+    document.getElementById("toggleMenu").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
