@@ -16,10 +16,17 @@ class FullScreenWebApp(QMainWindow):
 
         self.setWindowTitle("Asper")
         self.setWindowIcon(QIcon("logo.ico"))
-        self.showFullScreen()
-        # self.show()# is windowed
+        # self.showFullScreen()
+        self.show()# is windowed
 
         self.web_view.load(QUrl(url))
+        self.resize(800, 600) 
+        self.setStyleSheet( """
+            * {
+                background-color: rgba(0, 0, 0, 0);
+                color: white;
+            }
+            """)
 
         self.flask_app = flask_app
 
